@@ -1,0 +1,12 @@
+{
+  "name": "dynamic-question-assignment-system",
+  "version": "1.0.0",
+  "description": "Region-Based-Question-Rotation-Engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
