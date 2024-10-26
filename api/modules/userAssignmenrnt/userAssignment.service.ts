@@ -1,4 +1,3 @@
-
 import { logger } from "../../utils/logger";
 import { questionRepository } from '../question/question.repository';
 import { userRepository } from '../user/user.repository';
@@ -14,12 +13,12 @@ export const assignQuestionsToUsers = async (region: string) => {
   }
 
   const users = await userRepository.getUsersByRegion({ region });
-  if (!users) {
-    console.log(`No user exist`);
+  if (!users?.length) {
+    logger.info(`No users exist for region ${region}`);
     return;
   }
-  users?.forEach(async (user) => {
-    // Here we would update the user's current question, but for simplicity:
+
+  await Promise.all(users.map(async (user) => {
     logger.info(`Assigned question "${question.content}" to user ${user.email}`);
-  });
+  }));
 };
