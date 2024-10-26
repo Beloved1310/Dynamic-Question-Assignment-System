@@ -1,7 +1,6 @@
 
 import { logger } from "../../utils/logger";
 import { questionRepository } from '../question/question.repository';
-import { questionService } from '../question/question.service';
 import { userRepository } from '../user/user.repository';
 import { getCurrentCycleIndex } from '../../utils/date';
 
