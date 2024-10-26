@@ -1,7 +1,7 @@
 import mongoose, { Document, Schema } from 'mongoose';
 import { Regions } from '../constants/region';
 
-interface IUser extends Document {
+export interface IUser extends Document {
   name: string;
   email: string;
   region: string;

@@ -1,7 +1,7 @@
 import mongoose, { Document, Schema } from 'mongoose';
 import { Regions } from '../constants/region';
 
-interface IQuestion extends Document {
+export interface IQuestion extends Document {
   content: string;
   region: string;
   cycleIndex: number;
@@ -10,7 +10,7 @@ interface IQuestion extends Document {
 const QuestionSchema = new Schema<IQuestion>({
   content: { type: String, required: true },
   region: { type: String, enum: Object.values(Regions), required: true },
-  cycleIndex: { type: Number, required: true },
+  cycleIndex: { type: Number, required: true,  default:7},
 });
 
 // Compound index for efficient retrieval based on region and cycle index
