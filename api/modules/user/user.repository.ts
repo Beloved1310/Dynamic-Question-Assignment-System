@@ -7,7 +7,7 @@ export const userRepository = {
     return user;
   },
 
-  async getUsers(credential: {}): Promise<IUser[] | null> {
+  async getUsersByRegion(credential: {}): Promise<IUser[] | null> {
     const users = await User.find(credential).select("-__v");
     return users;
   },

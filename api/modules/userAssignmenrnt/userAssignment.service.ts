@@ -14,7 +14,7 @@ export const assignQuestionsToUsers = async (region: string) => {
     return;
   }
 
-  const users = await userRepository.getUsers({ region });
+  const users = await userRepository.getUsersByRegion({ region });
   if (!users) {
     console.log(`No user exist`);
     return;
